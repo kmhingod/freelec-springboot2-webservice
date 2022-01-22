@@ -41,16 +41,6 @@ public class HelloControllerTest {
                 .andExpect(content().string(hello));
     }
 
-    @Test
-    public void Expect_return_hello1() throws Exception {
-
-        String hello = "hello1";
-
-        mvc.perform(get("/hello"))
-                .andExpect(status().isOk())
-                .andExpect(content().string(hello));
-    }
-
     @WithMockUser(roles="USER")
     @Test
     public void Expect_return_helloDto() throws Exception {
